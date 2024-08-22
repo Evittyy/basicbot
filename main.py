@@ -83,4 +83,10 @@ async def hello(ctx):
 async def heh(ctx, count_heh=5):
     await ctx.send("he" * count_heh)
 
+@bot.command()
+async def eightball(ctx, *, question: str):
+    """Ask the magic 8-ball a question."""
+    responses = ['Yes', 'No', 'Maybe', 'Ask again later', 'Definitely']
+    await ctx.send(f'🎱 {random.choice(responses)}')
+
 bot.run("token")
